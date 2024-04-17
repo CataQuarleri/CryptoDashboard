@@ -10,32 +10,23 @@ function formatDate(date){
 
 
 function createCard(oneCoin){
-
+console.log("card SAVEDID", oneCoin.saveId)
     let card = document.createElement("div")
     card.setAttribute("id", oneCoin.id)
     card.setAttribute("class", "cryptoCard")
     card.innerHTML = `<img src=${oneCoin.img} id=${oneCoin.id} alt="Coin Icon" class="coinIcon">
      <div class="cryptoName" id=${oneCoin.id}>${oneCoin.name}</div>
-     <button class="saveBtn">Save this coin</button>
-     <div id="extraInfo"></div>`
-    //  if (oneCoin.marketCap && oneCoin.totalVolume && oneCoin.currentPrice && oneCoin.symbol){
-    //     createInfo(oneCoin)
-    //     return card
-    //  }else {
-    //      return card
-    //  }
+     <button id="${oneCoin.id}_btn" class="saveBtn">${oneCoin.saveId ? "Delete" : "Save this coin"}</button>
+     <div id="extraInfo_${oneCoin.id}"></div>`
     return card
  }
 
  function createInfo(coinData){
-    // let existingData = document.getElementById(`${coinData.id}_info`)
-    // let extraInfo = document.getElementById("extraInfo")
-    // if (existingData && extraInfo){
-    //     extraInfo.innerHTML = ""
-    // } else {
+
     let info = document.createElement("div")
     info.setAttribute("id", `${coinData.id}_info`)
     info.className = "extraInfo"
+    info.style.display = "block";
     info.innerHTML = 
     `  <div class="infoRow">
     <div class="infoLabel">Current Price:</div>
@@ -50,7 +41,6 @@ function createCard(oneCoin){
     <div class="infoValue">${coinData.symbol} ${coinData.totalVolume}</div>
 </div>`
       return info
-    // }
- }
+    }
 
 export {formatDate, createCard, createInfo}
