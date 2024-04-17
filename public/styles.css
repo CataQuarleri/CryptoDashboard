@@ -81,6 +81,8 @@ main {
 }
 
 .cryptoCard {
+    display: flex;
+    flex-flow: wrap column;
     background-color: #fff; /* White card background */
     padding: 20px;
     border-radius: 10px;
@@ -100,9 +102,10 @@ main {
 }
 
 .coinIcon {
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
+    width: 100px; 
+    height: 100px; 
     margin-bottom: 10px;
+    align-self: center;
 }
 
 .saveBtn {
