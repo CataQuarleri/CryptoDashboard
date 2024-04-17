@@ -1,3 +1,5 @@
+import {formatDate, createCard} from './auxFunct.js'
+
 const API_KEY = 'CG-BqL849ZvLQBrSpDkLwNos2Ln';
 const BASE_URL = 'https://api.coingecko.com/api/v3';
 const headers = {
@@ -29,17 +31,47 @@ async function getSearch (input) {
         return coins
 };
 
-async function createCard(oneCoin){
+async function getMoreInfo(coinId){
+    let loadInfo = await fetch(`${BASE_URL}/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`, {
+        method: 'GET',
+        headers: headers
+    })
+    .then((response) => response.json())
+        .catch((err) => console.error(err));
+    let extraData = {
+        id: coinId,
+        currentPrice: loadInfo.market_data.current_price.usd,
+        marketCap: loadInfo.market_data.market_cap.usd,
+        totalVolume: loadInfo.market_data.total_volume.usd,
+        symbol: loadInfo.symbol,
+        name: loadInfo.name 
+    }
 
-   let card = document.createElement("div")
-   card.setAttribute("id", oneCoin.id)
-   card.setAttribute("class", "cryptoCard")
-   card.innerHTML = `<img src=${oneCoin.img} alt="Coin Icon" class="coinIcon">
-    <div class="cryptoName" id=${oneCoin.id}>${oneCoin.name}</div>
-    <div class="history" hidden>
-    </div>
-    <button class="saveBtn">Save this coin</button>`
-return card
+    return extraData
 }
 
-export {getSearch, createCard}
+async function loadContent(page = 1){
+    let loadResults = await fetch(`${BASE_URL}/coins/markets?vs_currency=usd&per_page=12&page=${page}`, {
+        method: 'GET',
+        headers: headers
+    })
+        .then((response) => response.json())
+        .catch((err) => console.error(err));
+    console.log("LOAD", loadResults)
+
+    let mappedResult = loadResults.map((coin) => {
+        let info = {
+            name: coin.name,
+            id: coin.id,
+            img: coin.image ? coin.image : './public/placeholder.png',
+            marketCap: coin.market_cap,
+            currentPrice: coin.current_price,
+            totalVolume: coin.total_volume,
+            symbol: coin.symbol
+        }
+        return info
+    })
+return mappedResult
+}
+
+export {getSearch, loadContent, getMoreInfo}

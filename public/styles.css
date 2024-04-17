@@ -5,13 +5,13 @@ padding: 0;
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2; /* Light gray background */
+    background-color: #f2f2f2;
 
 }
 
 header {
-    background-color: #007bff; /* Blue header background */
-    color: #fff; /* White text color */
+    background-color: #007bff; 
+    color: #fff; 
     text-align: center;
     padding: 20px 0;
 }
@@ -25,6 +25,10 @@ header {
 h1 {
     margin: 0;
     font-weight: bold;
+}
+
+h1:hover {
+    cursor: pointer;
 }
 
 .searchContainer {
@@ -42,7 +46,7 @@ h1 {
 
 #searchBtn {
     padding: 10px 15px;
-    background-color: #0056b3; /* Darker blue button background */
+    background-color: #0056b3; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -51,12 +55,12 @@ h1 {
 }
 
 #searchBtn:hover {
-    background-color: #004080; /* Darker shade on hover */
+    background-color: #004080; 
 }
 
 #savedCoinsBtn {
     padding: 10px 15px;
-    background-color: #0056b3; /* Darker blue button background */
+    background-color: #0056b3;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -65,7 +69,7 @@ h1 {
 }
 
 #savedCoinsBtn:hover {
-    background-color: #004080; /* Darker shade on hover */
+    background-color: #004080; 
 }
 
 main {
@@ -83,21 +87,21 @@ main {
 .cryptoCard {
     display: flex;
     flex-flow: wrap column;
-    background-color: #fff; /* White card background */
+    background-color: #fff; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
 }
 
 .cryptoCard:hover {
-    background-color: #f2f2f2; /* Light gray background on hover */
+    background-color: #f2f2f2;
 }
 
 .cryptoName {
     font-weight: bold;
-    font-size: 1.2em; /* Larger font size */
+    font-size: 1.2em; 
     margin-top: 10px;
 }
 
@@ -110,7 +114,7 @@ main {
 
 .saveBtn {
     padding: 8px 16px;
-    background-color: #28a745; /* Green button background */
+    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -118,5 +122,54 @@ main {
 }
 
 .saveBtn:hover {
-    background-color: #218838; /* Darker shade on hover */
+    background-color: #218838; 
+}
+
+.extraInfo {
+    margin-top: 10px;
+    display: none; 
+    border-top: 1px solid #ddd; 
+    padding-top: 10px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.infoLabel {
+    flex: 0 0 120px; 
+    font-weight: bold;
+}
+
+.infoValue {
+    flex: 1; 
+    color: #007bff; 
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: right;
+    margin-bottom: 20px
+}
+
+.pageBtn {
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    width: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pageBtn:hover {
+    background-color: #0056b3;
+}
+
+.pageBtn:active {
+    background-color: #0056b3; 
 }
