@@ -1,0 +1,119 @@
+* {
+ margin: 0;
+padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light gray background */
+
+}
+
+header {
+    background-color: #007bff; /* Blue header background */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#searchInput {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    background-color: #0056b3; /* Darker blue button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#searchBtn:hover {
+    background-color: #004080; /* Darker shade on hover */
+}
+
+#savedCoinsBtn {
+    padding: 10px 15px;
+    background-color: #0056b3; /* Darker blue button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#savedCoinsBtn:hover {
+    background-color: #004080; /* Darker shade on hover */
+}
+
+main {
+    padding: 20px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+#cryptoList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cryptoCard {
+    background-color: #fff; /* White card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.cryptoCard:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+.cryptoName {
+    font-weight: bold;
+    font-size: 1.2em; /* Larger font size */
+    margin-top: 10px;
+}
+
+.coinIcon {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+.saveBtn {
+    padding: 8px 16px;
+    background-color: #28a745; /* Green button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background-color: #218838; /* Darker shade on hover */
+}

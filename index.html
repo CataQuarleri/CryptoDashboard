@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Crypto Dashboard</title>
+		<link
+			rel="stylesheet"
+			href="./public/styles.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<div class="headerContainer">
+				<h1>Crypto Dashboard</h1>
+				<div class="searchContainer">
+					<input
+						type="text"
+						id="searchInput"
+						placeholder="Search cryptocurrencies..."
+					/>
+					<button id="searchBtn">Search</button>
+				</div>
+				<button id="savedCoinsBtn">Saved Coins</button>
+			</div>
+		</header>
+		<main>
+			<section id="cryptoList">
+				<!-- Cryptocurrency cards will be dynamically added here -->
+				<div class="cryptoCard" data-symbol="BTC">
+                    <img src="placeholder.png" alt="Coin Icon" class="coinIcon">
+                    <div class="cryptoName">Bitcoin</div>
+                    <div class="history hidden">
+                        <!-- History of the coin will be dynamically added here -->
+                    </div>
+                    <button class="saveBtn">Save this coin</button>
+                </div>
+				<!-- Add more cards for other cryptocurrencies -->
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2024 Crypto Dashboard powered by CoinGecko. All rights reserved</p>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+</html>
